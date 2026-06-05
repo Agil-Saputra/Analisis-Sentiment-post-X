@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PSSI CSV Sentiment Dashboard</title>
+  <title>MBG CSV Sentiment Dashboard</title>
   <style>
     :root {
       --positive: #1f8a5b;
-      --netral: #b47b10;
+      --neutral: #b47b10;
       --negative: #c2413b;
       --ink: #202124;
       --muted: #5f6368;
@@ -192,8 +192,8 @@
       border-top: 5px solid var(--positive);
     }
 
-    .summary-card.netral {
-      border-top: 5px solid var(--netral);
+    .summary-card.neutral {
+      border-top: 5px solid var(--neutral);
     }
 
     .summary-card.negative {
@@ -271,7 +271,7 @@
 <body>
   <main>
     <header>
-      <h1>PSSI CSV Sentiment Dashboard</h1>
+      <h1>MBG CSV Sentiment Dashboard</h1>
       <p class="muted">Upload a CSV, choose the text column, then review the sentiment split and grouped rows.</p>
     </header>
 
@@ -314,10 +314,10 @@
 
   <script>
     const API_URL = '/api/sentiment/predict-csv';
-    const SENTIMENT_ORDER = ['positive', 'netral', 'negative'];
+    const SENTIMENT_ORDER = ['positive', 'neutral', 'negative'];
     const SENTIMENT_COLORS = {
       positive: '#1f8a5b',
-      netral: '#b47b10',
+      neutral: '#b47b10',
       negative: '#c2413b',
     };
 

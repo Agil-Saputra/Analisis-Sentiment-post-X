@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
 
-MODEL_PATH = Path(__file__).with_name("svm_pssi_sentiment_model.joblib")
+MODEL_PATH = Path(__file__).with_name("svm_mbg_sentiment_model.joblib")
 FRONTEND_PATH = Path(__file__).with_name("frontend_csv_example.html")
 
 INDONESIAN_STOPWORDS = {
@@ -29,16 +29,16 @@ INDONESIAN_LABELS = {
     "negative": "negatif",
 }
 
-SENTIMENT_ORDER = ["positive", "netral", "negative"]
+SENTIMENT_ORDER = ["positive", "neutral", "negative"]
 
 PUBLIC_SENTIMENT_LABELS = {
     "positive": "positive",
-    "neutral": "netral",
-    "netral": "netral",
+    "neutral": "neutral",
+    "netral": "neutral",
     "negative": "negative",
 }
 
-app = FastAPI(title="SVM PSSI Sentiment CSV API")
+app = FastAPI(title="SVM MBG Sentiment CSV API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -114,7 +114,7 @@ def public_sentiment_label(label: str) -> str:
 @app.get("/")
 def root() -> dict[str, str]:
     return {
-        "message": "SVM PSSI Sentiment CSV API",
+        "message": "SVM MBG Sentiment CSV API",
         "dashboard_url": "/csv-dashboard",
         "predict_csv_url": "/api/sentiment/predict-csv",
         "docs_url": "/docs",
