@@ -63,7 +63,7 @@ Then open:
 http://127.0.0.1:8001
 ```
 
-## 5. Open The Dashboard
+## 5. Open The DashboardA
 
 Open this URL in your browser:
 
